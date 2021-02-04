@@ -5,9 +5,5 @@ while True:
 	if name == 'q':
 		break
 	price = input('輸入商品價格：')
-	p = [name, price]
-	products.append(p)
+	products.append([name, price])
 print(products)
-
-products[0][0] # 大清單的第0位、小清單的第0位
-
