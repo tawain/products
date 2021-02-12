@@ -1,17 +1,25 @@
-# 讀取檔案
+import random
+import os # 載入operating system/作業系統
+
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue # continue和break一樣，只能寫在迴圈裡。
+# 確認檔案存在與否
+if os.path.isfile('products.csv'):
+	print('找到檔案了')
+	# 讀取檔案
+	with open('products.csv', 'r', encoding='utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue # continue和break一樣，只能寫在迴圈裡。
 			# continue就是跳到下一迴圈的意思。
 			# 跳過continue之後的迴圈裡面的程式碼，從頭開始一次新迴圈。
-		name, price = line.strip().split(',') 
+			name, price = line.strip().split(',') 
 		# strip除掉，除掉換行符號/n。
 		# split切割，字串line一遇到'，'就切割。
 		# split切割完的結果是清單。
-		products.append([name, price])
-print(products)
+			products.append([name, price])
+	print(products)
+else:
+	print('找不到檔案')
 
 # 讓使用者輸入
 # 二維清單 2dimensional
@@ -44,9 +52,3 @@ with open('products.csv', 'w', encoding='utf-8') as f: # r(read)讀取模式/w(w
 		#f寫入str + str + str + str
 # open一定要有close，with是python自動close的功能。
 # +-法只能字串＋字串或整數＋整數、所以要再把整數int轉換成字串str
-
-
-
-
-	
-
