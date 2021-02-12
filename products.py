@@ -2,6 +2,10 @@
 products = []
 with open('products.csv', 'r', encoding='utf-8') as f:
 	for line in f:
+		if '商品,價格' in line:
+			continue # continue和break一樣，只能寫在迴圈裡。
+			# continue就是跳到下一迴圈的意思。
+			# 跳過continue之後的迴圈裡面的程式碼，從頭開始一次新迴圈。
 		name, price = line.strip().split(',') 
 		# strip除掉，除掉換行符號/n。
 		# split切割，字串line一遇到'，'就切割。
