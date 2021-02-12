@@ -13,11 +13,7 @@ with open('products.csv', 'r', encoding='utf-8') as f:
 		products.append([name, price])
 print(products)
 
-
-
-
-
-
+# 讓使用者輸入
 # 二維清單 2dimensional
 while True:
 	name = input('輸入商品名稱：')
@@ -28,6 +24,7 @@ while True:
 	products.append([name, price])
 print(products)
 
+# 印出商品價格
 for p in products:
 	print(p)
 	print(p[0])
@@ -37,6 +34,7 @@ for p in products:
 # 'abc' + '123' = 'abc123'
 # 'abc' * 3 = 'abcabcabc'
 
+# 寫入檔案
 with open('products.csv', 'w', encoding='utf-8') as f: # r(read)讀取模式/w(write)寫入模式
 	f.write('商品,價格\n') 
 	# 寫入和讀取都牽扯到編碼(encoding)。所以加入encoding='utf-8'。
